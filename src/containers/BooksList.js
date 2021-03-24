@@ -15,8 +15,16 @@ const BooksList = () => {
           <th>Title</th>
           <th>Category</th>
         </tr>
-        {state.books.forEach(book => {
-          <Book id={book.id} title={book.title} category={book.category} />;
+        {state.books.map(book => {
+          console.log(book);
+          return (
+            <Book
+              key={book.id}
+              id={book.id}
+              title={book.title}
+              category={book.category}
+            />
+          );
         })}
       </table>
     </div>
