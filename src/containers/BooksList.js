@@ -10,26 +10,30 @@ const BooksList = props => {
     <div>
       <h1>Books as an HTML Table</h1>
       <table>
-        <tr>
-          <th>Book ID</th>
-          <th>Title</th>
-          <th>Category</th>
-        </tr>
-        {books.map(book => (
-          <Book
-            key={book.id}
-            id={book.id}
-            title={book.title}
-            category={book.category}
-          />
-        ))}
+        <thead>
+          <tr>
+            <th>Book ID</th>
+            <th>Title</th>
+            <th>Category</th>
+          </tr>
+        </thead>
+        <tbody>
+          {books.map(book => (
+            <Book
+              key={book.id}
+              id={book.id}
+              title={book.title}
+              category={book.category}
+            />
+          ))}
+        </tbody>
       </table>
     </div>
   );
 };
 
 BooksList.propTypes = {
-  books: PropTypes.arrayOf,
+  books: PropTypes.arrayOf(PropTypes.object),
 };
 
 BooksList.defaultProps = {
