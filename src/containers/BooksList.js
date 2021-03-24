@@ -15,9 +15,9 @@ const BooksList = () => {
           <th>Title</th>
           <th>Category</th>
         </tr>
-        <Book id={0} title="sample Title" category="custom category" />
-        <Book />
-        <Book id={2} title="sample Title" category="custom category" />
+        {state.books.forEach(book => {
+          <Book id={book.id} title={book.title} category={book.category} />;
+        })}
       </table>
     </div>
   );
