@@ -5,7 +5,6 @@ import Book from '../components/Book';
 const BooksList = () => {
   const state = store.getState();
 
-  console.log(state);
   return (
     <div>
       <h1>Books as an HTML Table</h1>
@@ -15,17 +14,14 @@ const BooksList = () => {
           <th>Title</th>
           <th>Category</th>
         </tr>
-        {state.books.map(book => {
-          console.log(book);
-          return (
-            <Book
-              key={book.id}
-              id={book.id}
-              title={book.title}
-              category={book.category}
-            />
-          );
-        })}
+        {state.books.map(book => (
+          <Book
+            key={book.id}
+            id={book.id}
+            title={book.title}
+            category={book.category}
+          />
+        ))}
       </table>
     </div>
   );

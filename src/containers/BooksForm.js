@@ -16,7 +16,6 @@ const BookForm = () => {
     event.preventDefault();
   };
 
-  console.log('it is inside books form now');
   return (
     <div>
       <form onSubmit={handleSubmit}>
