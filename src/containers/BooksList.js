@@ -1,9 +1,10 @@
 import React from 'react';
-import store from '../store';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import Book from '../components/Book';
 
-const BooksList = () => {
-  const state = store.getState();
+const BooksList = props => {
+  const { books } = props;
 
   return (
     <div>
@@ -14,7 +15,7 @@ const BooksList = () => {
           <th>Title</th>
           <th>Category</th>
         </tr>
-        {state.books.map(book => (
+        {books.map(book => (
           <Book
             key={book.id}
             id={book.id}
@@ -27,4 +28,16 @@ const BooksList = () => {
   );
 };
 
-export default BooksList;
+BooksList.propTypes = {
+  books: PropTypes.arrayOf,
+};
+
+BooksList.defaultProps = {
+  books: [],
+};
+
+const mapStateToProps = state => ({
+  books: state.books,
+});
+
+export default connect(mapStateToProps)(BooksList);
