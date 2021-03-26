@@ -187,10 +187,13 @@ code {
 }
 
 .current-chapter-box .current-chapter-text {
+  font-family: 'RobotoSlab', sans-serif;
+  font-size: 13px;
   margin: 5px 0;
 }
 
 .current-chapter-box .current-chapter-number {
+  font-family: 'RobotoSlab', sans-serif;
   margin-top: 5px;
   margin-bottom: 35px;
 }

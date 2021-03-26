@@ -2,6 +2,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import '../index.css';
+import PieChartComponent from './PieChartComponent';
 
 const Books = props => {
   const {
@@ -54,7 +55,7 @@ const Books = props => {
       </li>
       <li className="percentage-box">
         <div className="flex-row">
-          <p className="percentage-image">picture</p>
+          <PieChartComponent percentage={parseInt(completedPercent, 10)} />
           <div className="flex-columm">
             <h2 className="flex-column-item percentage">{`${completedPercent} %`}</h2>
             <p className="black-2 flex-column-item">Completed</p>
@@ -64,7 +65,6 @@ const Books = props => {
       <li>
         <div className="flex-row">
           <p className="Line-3" />
-
           <div className="current-chapter-box">
             <p className="black-2 current-chapter-text">CURRENT CHAPTER</p>
             <p className="current-chapter-number">{`Chapter ${currentChapter}`}</p>
