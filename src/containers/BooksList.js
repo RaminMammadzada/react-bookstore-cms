@@ -22,11 +22,8 @@ const BooksList = props => {
   const handleFilterChange = event => {
     event.preventDefault();
     const category = event.target.value;
-    console.log('here is the selected category: ', category);
     changeFilter(category);
   };
-
-  console.log('here is the props: ', props);
 
   // changeFilter('All');
   let currentBookList;

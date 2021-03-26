@@ -48,8 +48,6 @@ const BooksForm = props => {
 
   return (
     <div>
-      <h2>{`title: ${state.title}`}</h2>
-      <h2>{`category: ${state.category}`}</h2>
       <form onSubmit={handleSubmit}>
         <label htmlFor="title">
           Title:
