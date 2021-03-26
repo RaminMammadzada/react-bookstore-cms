@@ -46,20 +46,18 @@ const BooksList = props => {
         <FaUserCircle className="user-icon" />
       </div>
       <div className="books-list">
-        <ul>
-          {currentBookList.map(book => (
-            <Book
-              key={book.id}
-              id={book.id}
-              title={book.title}
-              category={book.category}
-              author={book.author}
-              completedPercent={book.completedPercent}
-              currentChapter={book.currentChapter}
-              handleClick={handleRemoveBook}
-            />
-          ))}
-        </ul>
+        {currentBookList.map(book => (
+          <Book
+            key={book.id}
+            id={book.id}
+            title={book.title}
+            category={book.category}
+            author={book.author}
+            completedPercent={book.completedPercent}
+            currentChapter={book.currentChapter}
+            handleClick={handleRemoveBook}
+          />
+        ))}
       </div>
     </div>
   );

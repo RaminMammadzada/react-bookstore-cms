@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
 import PropTypes from 'prop-types';
 import '../index.css';
@@ -15,20 +16,51 @@ const Books = props => {
 
   return (
     <ul className="book-ul">
-      <li>{id}</li>
-      <li>{title}</li>
-      <li>{category}</li>
-      <li>{author}</li>
-      <li>{completedPercent}</li>
-      <li>{currentChapter}</li>
       <li>
-        <button
-          type="button"
-          id={id}
-          onClick={handleClick}
-        >
-          X
-        </button>
+        <div className="category-title-author">
+          <p className="category">{category}</p>
+          <p className="title">{title}</p>
+          <a
+            href="#"
+            id={id}
+            onClick={handleClick}
+            className="flex-item"
+          >
+            {author}
+          </a>
+        </div>
+        <div className="row">
+          <a
+            href="#"
+            id={id}
+            onClick={handleClick}
+            className="flex-item"
+          >
+            Comment
+          </a>
+          <a
+            href="#"
+            id={id}
+            onClick={handleClick}
+            className="flex-item"
+          >
+            Remove
+          </a>
+          <a
+            href="#"
+            id={id}
+            onClick={handleClick}
+            className="flex-item"
+          >
+            Edit
+          </a>
+        </div>
+      </li>
+      <li>
+        {`${completedPercent} % Completed`}
+      </li>
+      <li>
+        {`Current chapter: ${currentChapter}`}
       </li>
     </ul>
   );
