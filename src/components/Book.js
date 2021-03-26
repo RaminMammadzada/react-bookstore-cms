@@ -18,49 +18,61 @@ const Books = props => {
     <ul className="book-ul">
       <li>
         <div className="category-title-author">
-          <p className="category">{category}</p>
+          <p className="category black-2">{category}</p>
           <p className="title">{title}</p>
           <a
             href="#"
             id={id}
-            onClick={handleClick}
-            className="flex-item"
           >
             {author}
           </a>
         </div>
-        <div className="row">
+        <div>
           <a
             href="#"
             id={id}
-            onClick={handleClick}
-            className="flex-item"
+            className="flex-row-item Line-2 padding-1"
           >
-            Comment
+            Comments
           </a>
           <a
             href="#"
             id={id}
             onClick={handleClick}
-            className="flex-item"
+            className="flex-row-item Line-2 padding-1"
           >
             Remove
           </a>
           <a
             href="#"
             id={id}
-            onClick={handleClick}
-            className="flex-item"
+            className="flex-row-item Line-2 padding-1"
           >
             Edit
           </a>
         </div>
       </li>
-      <li>
-        {`${completedPercent} % Completed`}
+      <li className="percentage-box">
+        <div className="flex-row">
+          <p className="percentage-image">picture</p>
+          <div className="flex-columm">
+            <h2 className="flex-column-item percentage">{`${completedPercent} %`}</h2>
+            <p className="black-2 flex-column-item">Completed</p>
+          </div>
+        </div>
       </li>
       <li>
-        {`Current chapter: ${currentChapter}`}
+        <div className="flex-row">
+          <p className="Line-3" />
+
+          <div className="current-chapter-box">
+            <p className="black-2 current-chapter-text">CURRENT CHAPTER</p>
+            <p className="current-chapter-number">{`Chapter ${currentChapter}`}</p>
+            <buton className="update-button">
+              UPDATE PROFGRESS
+            </buton>
+          </div>
+        </div>
       </li>
     </ul>
   );

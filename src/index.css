@@ -75,21 +75,21 @@ code {
 
 .books-list {
   padding-left: 100px;
+  padding-right: 100px;
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
 .book-ul {
-  width: 800px;
   background-color: #fff;
   color: #121212;
   list-style: none;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  padding-top: 20px;
+  margin-top: 7.5px;
+  margin-bottom: 7.5px;
+  padding-top: 32px;
   padding-bottom: 20px;
   padding-right: 50px;
+  padding-left: 27px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -116,10 +116,37 @@ code {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
 }
 
-.flex-item {
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.flex-column-item {
+  margin: 0;
+}
+
+.flex-row-item {
   margin: 0 5px;
+}
+
+.percentage-box {
+  width: 150px;
+  position: absolute;
+  left: calc(60% - 150px);
+}
+
+.percentage {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 32px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
 }
 
 .category-title-author {
@@ -130,7 +157,6 @@ code {
 
 .category-title-author .category {
   margin: 3px 0;
-  color: #757575;
   font-weight: bold;
 }
 
@@ -138,4 +164,42 @@ code {
   margin: 3px 0;
   color: #121212;
   font-weight: bold;
+}
+
+.black-2 {
+  color: #757575;
+}
+
+.Line-2 {
+  height: 10px;
+  border-right: solid 2px #e8e8e8;
+}
+
+.Line-3 {
+  width: 1px;
+  height: 70px;
+  margin: 18px 59px 0 79px;
+  border: solid 1px #e8e8e8;
+}
+
+.padding-1 {
+  padding: 5px;
+}
+
+.current-chapter-box .current-chapter-text {
+  margin: 5px 0;
+}
+
+.current-chapter-box .current-chapter-number {
+  margin-top: 5px;
+  margin-bottom: 35px;
+}
+
+.update-button {
+  background-color: #0290ff;
+  color: #fff;
+  width: 184px;
+  height: 33px;
+  padding: 7px 19px 8px 22px;
+  border-radius: 3px;
 }
