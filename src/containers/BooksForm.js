@@ -8,14 +8,14 @@ const BooksForm = props => {
   const [state, setState] = useState({
     id: Date.now().toString().slice(-5),
     title: '',
-    category: 'not selected',
+    category: 'select category',
   });
 
-  const bookCategoriesExtended = ['not selected', ...bookCategories];
+  const bookCategoriesExtended = ['select category', ...bookCategories];
 
   const handleSubmit = event => {
     event.preventDefault();
-    if (state.category === 'not selected'
+    if (state.category === 'select category'
       || state.title === '') {
       // eslint-disable-next-line no-alert
       alert(`None of the inputs can be empty in the form!\n
@@ -47,8 +47,8 @@ const BooksForm = props => {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
+    <div className="create-book">
+      <form onSubmit={handleSubmit} className="form">
         <label htmlFor="title">
           Title:
           <input

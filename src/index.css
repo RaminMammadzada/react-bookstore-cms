@@ -14,6 +14,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: rgba(0, 0, 0, 0.05);
 }
 
 code {
@@ -24,4 +25,74 @@ code {
     Consolas,
     'Courier New',
     monospace;
+}
+
+.booklist-and-heaader {
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 99px;
+  background-color: #fff;
+  padding-left: 100px;
+}
+
+.header-navbar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 95px;
+}
+
+.bookstote-cms {
+  color: #0290ff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 30px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  margin-top: 29px;
+  margin-bottom: 29px;
+  margin-right: 47px;
+}
+
+.books-text-in-header {
+  margin-right: 41px;
+}
+
+.user-icon {
+  width: 45px;
+  height: 45px;
+  color: #0290ff;
+}
+
+.books-list {
+  padding-left: 100px;
+}
+
+.book-ul {
+  width: max-content;
+  background-color: #fff;
+  color: #121212;
+  list-style: none;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-right: 50px;
+}
+
+.book-ul li {
+  display: inline;
+}
+
+.create-book {
+  padding-left: 100px;
 }

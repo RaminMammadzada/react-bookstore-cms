@@ -1,9 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { FaUserCircle } from 'react-icons/fa';
 import Book from '../components/Book';
 import { changeFilter, removeBook } from '../actions';
 import CategoryFilter from '../components/CategoryFilter';
+import '../index.css';
 
 const BooksList = props => {
   const {
@@ -25,40 +27,39 @@ const BooksList = props => {
     changeFilter(category);
   };
 
-  // changeFilter('All');
   let currentBookList;
   if (selectedCategory === 'All') {
     currentBookList = books.concat();
   } else {
     currentBookList = books.filter(book => book.category === selectedCategory);
   }
+  console.log(currentBookList);
 
   return (
-    <div>
-      <CategoryFilter handleChange={handleFilterChange} />
-      <div>
-        <h1>Books as an HTML Table</h1>
-        <table>
-          <thead>
-            <tr>
-              <th>Book ID</th>
-              <th>Title</th>
-              <th>Category</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            {currentBookList.map(book => (
-              <Book
-                key={book.id}
-                id={book.id}
-                title={book.title}
-                category={book.category}
-                handleClick={handleRemoveBook}
-              />
-            ))}
-          </tbody>
-        </table>
+    <div className="booklist-and-heaader">
+      <div className="header">
+        <div className="header-navbar">
+          <h1 className="bookstote-cms">Bookstrote CMS</h1>
+          <h2 className="books-text-in-header">Books</h2>
+          <CategoryFilter handleChange={handleFilterChange} />
+        </div>
+        <FaUserCircle className="user-icon" />
+      </div>
+      <div className="books-list">
+        <ul>
+          {currentBookList.map(book => (
+            <Book
+              key={book.id}
+              id={book.id}
+              title={book.title}
+              category={book.category}
+              author={book.author}
+              completedPercent={book.completedPercent}
+              currentChapter={book.currentChapter}
+              handleClick={handleRemoveBook}
+            />
+          ))}
+        </ul>
       </div>
     </div>
   );

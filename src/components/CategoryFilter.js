@@ -8,7 +8,6 @@ const CategoryFilter = props => {
 
   return (
     <label htmlFor="category">
-      Category:
       <select
         onChange={handleChange}
         name="category"
