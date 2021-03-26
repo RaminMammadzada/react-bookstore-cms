@@ -1,10 +1,11 @@
 import faker from 'faker';
+import bookCategories from './constants/bookCategories';
 
 export function generateBook() {
   return {
-    id: faker.random.number(),
-    title: faker.random.words(),
-    category: faker.random.word(),
+    id: faker.random.number({ min: 10001, max: 99999 }),
+    title: faker.random.words().toUpperCase(),
+    category: bookCategories[Math.floor(Math.random() * bookCategories.length)],
   };
 }
 

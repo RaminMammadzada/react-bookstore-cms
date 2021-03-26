@@ -6,17 +6,26 @@ import bookCategories from '../constants/bookCategories';
 
 const BooksForm = props => {
   const [state, setState] = useState({
-    id: Date.now(),
+    id: Date.now().toString().slice(-5),
     title: '',
-    category: '',
+    category: 'not selected',
   });
+
+  const bookCategoriesExtended = ['not selected', ...bookCategories];
 
   const handleSubmit = event => {
     event.preventDefault();
-    setState({
-      ...state, id: Date.now(),
-    });
-    props.createBook(state);
+    if (state.category === 'not selected'
+      || state.title === '') {
+      // eslint-disable-next-line no-alert
+      alert(`None of the inputs can be empty in the form!\n
+            Please fill both title and category fields.`);
+    } else {
+      setState({
+        ...state, id: Date.now().toString().slice(-5),
+      });
+      props.createBook(state);
+    }
   };
 
   const handleChange = event => {
@@ -57,7 +66,7 @@ const BooksForm = props => {
             onChange={handleChange}
             name="category"
           >
-            {bookCategories.map(category => (
+            {bookCategoriesExtended.map(category => (
               <option
                 key={category}
                 value={category}
