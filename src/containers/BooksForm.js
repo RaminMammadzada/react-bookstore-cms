@@ -10,6 +10,7 @@ const BooksForm = props => {
     category: '',
   });
   const bookCategories = [
+    '',
     'Action',
     'Biography',
     'History',

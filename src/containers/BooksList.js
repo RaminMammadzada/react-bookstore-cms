@@ -6,24 +6,39 @@ import { changeFilter, removeBook } from '../actions';
 import CategoryFilter from '../components/CategoryFilter';
 
 const BooksList = props => {
-  const { books, removeBook, changeFilter } = props;
+  const {
+    books,
+    selectedCategory,
+    removeBook,
+    changeFilter,
+  } = props;
 
   const handleRemoveBook = event => {
     event.preventDefault();
-    removeBook(event.target.id);
+    const bookId = event.target.id;
+    removeBook(bookId);
   };
 
   const handleFilterChange = event => {
     event.preventDefault();
-    console.log(event.target.value);
-    changeFilter(event.target.value);
+    const category = event.target.value;
+    console.log('here is the selected category: ', category);
+    changeFilter(category);
   };
 
-  console.log(books);
+  console.log('here is the props: ', props);
+
+  // changeFilter('All');
+  let currentBookList;
+  if (selectedCategory === 'All') {
+    currentBookList = books.concat();
+  } else {
+    currentBookList = books.filter(book => book.category === selectedCategory);
+  }
 
   return (
     <div>
-      <CategoryFilter bookCategories handleChange={handleFilterChange} />
+      <CategoryFilter handleChange={handleFilterChange} />
       <div>
         <h1>Books as an HTML Table</h1>
         <table>
@@ -36,7 +51,7 @@ const BooksList = props => {
             </tr>
           </thead>
           <tbody>
-            {books.map(book => (
+            {currentBookList.map(book => (
               <Book
                 key={book.id}
                 id={book.id}
@@ -56,6 +71,7 @@ BooksList.propTypes = {
   books: PropTypes.arrayOf(PropTypes.object),
   removeBook: PropTypes.func.isRequired,
   changeFilter: PropTypes.func.isRequired,
+  selectedCategory: PropTypes.string.isRequired,
 };
 
 BooksList.defaultProps = {
@@ -64,6 +80,7 @@ BooksList.defaultProps = {
 
 const mapStateToProps = state => ({
   books: state.books,
+  selectedCategory: state.filter,
 });
 
 const mapDispatchToProps = dispatch => ({
