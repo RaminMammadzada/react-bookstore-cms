@@ -1,6 +1,6 @@
 # Bookstore CMS App Frontend with React and Redux
 
-In this project React and Redux are used to build the front-end of the bookstore application that will help to the fictional bookseller company to organize and manage their bookstore. It must be fast, dynamic and responsive to user actions. Therefore I decided to build it with React & Redux. [The specific UI](https://app.zeplin.io/project/5b35a9e13227086040f8eb75/screen/5b695e29bb8c844f118f9378) is implemented besides the functionality of the app. The github workflow, ESLint and Stylelint [linter guidlines by Microverse](linters-config/javascript at master · m…) is followed. 
+In this project React and Redux are used to build the front-end of the bookstore application that will help to the fictional bookseller company to organize and manage their bookstore. It must be fast, dynamic and responsive to user actions. Therefore I decided to build it with React & Redux. [The specific UI](https://app.zeplin.io/project/5b35a9e13227086040f8eb75/screen/5b695e29bb8c844f118f9378) is implemented besides the functionality of the app. The github workflow, ESLint and Stylelint [linter guidlines by Microverse](linters-config/javascript at master · m…) is followed. Several ESLint plugins are required to use, such as `eslint-config-airbnb`. All of them can be checked in the `eslintrc.json` file.
 
 ## Screenshot
 
@@ -63,6 +63,7 @@ In this project React and Redux are used to build the front-end of the bookstore
 - ESLint
 - StyleLint
 - [Recharts](https://github.com/recharts/recharts)
+- [react-icons](https://www.npmjs.com/package/react-icons)
 
 
 ### Setup
