@@ -1,19 +1,10 @@
 import React from 'react';
 import PropType from 'prop-types';
+import bookCategories from '../constants/bookCategories';
 
 const CategoryFilter = props => {
   const { handleChange } = props;
-
-  const bookCategories = [
-    'All',
-    'Action',
-    'Biography',
-    'History',
-    'Horror',
-    'Kids',
-    'Learning',
-    'Sci-Fi',
-  ];
+  const bookCategoriesExtended = ['All', ...bookCategories];
 
   return (
     <label htmlFor="category">
@@ -22,7 +13,7 @@ const CategoryFilter = props => {
         onChange={handleChange}
         name="category"
       >
-        {bookCategories.map(category => (
+        {bookCategoriesExtended.map(category => (
           <option
             key={category}
             value={category}

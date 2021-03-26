@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { createBook } from '../actions';
+import bookCategories from '../constants/bookCategories';
 
 const BooksForm = props => {
   const [state, setState] = useState({
@@ -9,16 +10,6 @@ const BooksForm = props => {
     title: '',
     category: '',
   });
-  const bookCategories = [
-    '',
-    'Action',
-    'Biography',
-    'History',
-    'Horror',
-    'Kids',
-    'Learning',
-    'Sci-Fi',
-  ];
 
   const handleSubmit = event => {
     event.preventDefault();
