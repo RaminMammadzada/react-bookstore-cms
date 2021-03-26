@@ -7,7 +7,7 @@ export default function PieChartComponent({ percentage }) {
     { name: 'Group A', value: 100 - percentage },
     { name: 'Group B', value: percentage },
   ];
-  const COLORS = ['#FFFFFF', '#0088FE'];
+  const COLORS = ['#F5F6F7', '#379cf6'];
 
   return (
     <PieChart width={140} height={140}>

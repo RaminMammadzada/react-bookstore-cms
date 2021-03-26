@@ -69,7 +69,7 @@ const Books = props => {
             <p className="black-2 current-chapter-text">CURRENT CHAPTER</p>
             <p className="current-chapter-number">{`Chapter ${currentChapter}`}</p>
             <buton className="update-button">
-              UPDATE PROFGRESS
+              UPDATE PROGRESS
             </buton>
           </div>
         </div>
@@ -83,9 +83,9 @@ Books.propTypes = {
   title: PropTypes.string,
   category: PropTypes.string,
   handleClick: PropTypes.func,
-  author: PropTypes.string.isRequired,
-  completedPercent: PropTypes.number.isRequired,
-  currentChapter: PropTypes.number.isRequired,
+  author: PropTypes.string,
+  completedPercent: PropTypes.number,
+  currentChapter: PropTypes.number,
 };
 
 Books.defaultProps = {
@@ -93,6 +93,9 @@ Books.defaultProps = {
   title: 'title must be here',
   category: 'category must be here',
   handleClick: null,
+  author: 'default Author',
+  completedPercent: 100,
+  currentChapter: 1,
 };
 
 export default Books;

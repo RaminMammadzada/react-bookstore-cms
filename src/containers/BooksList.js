@@ -33,7 +33,6 @@ const BooksList = props => {
   } else {
     currentBookList = books.filter(book => book.category === selectedCategory);
   }
-  console.log(currentBookList);
 
   return (
     <div className="booklist-and-heaader">
