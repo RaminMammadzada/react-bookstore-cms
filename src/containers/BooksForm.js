@@ -3,19 +3,20 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { createBook } from '../actions';
 import bookCategories from '../constants/bookCategories';
+import '../index.css';
 
 const BooksForm = props => {
   const [state, setState] = useState({
     id: Date.now().toString().slice(-5),
     title: '',
-    category: 'not selected',
+    category: 'select category',
   });
 
-  const bookCategoriesExtended = ['not selected', ...bookCategories];
+  const bookCategoriesExtended = ['select category', ...bookCategories];
 
   const handleSubmit = event => {
     event.preventDefault();
-    if (state.category === 'not selected'
+    if (state.category === 'select category'
       || state.title === '') {
       // eslint-disable-next-line no-alert
       alert(`None of the inputs can be empty in the form!\n
@@ -47,22 +48,23 @@ const BooksForm = props => {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
+    <div className="create-book">
+      <p className="Line-4" />
+      <span className="add-new-book-text">ADD NEW BOOK</span>
+      <form onSubmit={handleSubmit} className="form">
         <label htmlFor="title">
-          Title:
           <input
             type="text"
             name="title"
             onChange={handleChange}
+            className="title-input"
           />
         </label>
-
         <label htmlFor="category">
-          Category:
           <select
             onChange={handleChange}
             name="category"
+            className="category-input"
           >
             {bookCategoriesExtended.map(category => (
               <option
@@ -74,7 +76,11 @@ const BooksForm = props => {
             ))}
           </select>
         </label>
-        <input type="submit" value="Submit" />
+        <input
+          type="submit"
+          value="ADD BOOK"
+          className="add-book-button"
+        />
       </form>
     </div>
   );
